@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pressed Garlic Chopper - Alat Cepat & Praktis untuk Dapur Modern | Bestbrand Shop</title>
+    <meta name="description" content="Alat simpel untuk mencincang rempah segar hanya dengan sekali tekan! Hasil potongan cepat, rapi, dan merata tanpa perlu pisau. Stok terbatas!">
+    <meta name="keywords" content="pressed garlic chopper, alat cincang bawang, alat dapur praktis, bestbrand shop">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --black: #000000;
+            --gray-dark: #4a4a4a;
+            --gray-light: #9a9a9a;
+            --white: #ffffff;
+            --silver: #c0c0c0;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .font-cormorant {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        /* Hero Parallax */
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(74,74,74,0.6) 100%),
+                        url('https://cdn.hotishop.com/image/cff6c38fc71cf63a881b0432f5b3548e93b00e8e-600.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        /* Glassmorphism Effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Custom Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        /* Product Gallery */
+        .gallery-item {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Social Proof Popup */
+        .social-proof {
+            position: fixed;
+            top: 20px;
+            right: -400px;
+            z-index: 999;
+            transition: right 0.5s ease;
+            max-width: 350px;
+        }
+        
+        .social-proof.show {
+            right: 20px;
+        }
+        
+        /* Countdown Timer */
+        .countdown-item {
+            background: linear-gradient(135deg, var(--black) 0%, var(--gray-dark) 100%);
+            color: var(--white);
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin: 0 5px;
+            min-width: 60px;
+            text-align: center;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--gray-light);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--gray-dark);
+            border-radius: 4px;
+        }
+        
+        /* Order Form Styling */
+        .order-form-wrapper {
+            background: linear-gradient(135deg, var(--white) 0%, var(--silver) 100%);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        /* Testimonial Carousel */
+        .testimonial-carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .testimonial-item {
+            flex: 0 0 100%;
+            padding: 0 15px;
+        }
+        
+        @media (min-width: 768px) {
+            .testimonial-item {
+                flex: 0 0 50%;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .testimonial-item {
+                flex: 0 0 33.333%;
+            }
+        }
+        
+        /* Star Rating */
+        .star-rating {
+            color: #ffd700;
+            font-size: 16px;
+        }
+        
+        /* Sticky CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 998;
+            transform: translateY(100px);
+            transition: transform 0.3s ease;
+        }
+        
+        .sticky-cta.show {
+            transform: translateY(0);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        /* Loading Animation */
+        .loading-dots {
+            display: inline-block;
+        }
+        
+        .loading-dots span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--white);
+            margin: 0 2px;
+            animation: loading 1.4s ease-in-out infinite;
+        }
+        
+        .loading-dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .loading-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes loading {
+            0%, 60%, 100% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="font-cormorant text-2xl font-bold text-white">
+                    Bestbrand Shop
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#product" class="text-white hover:text-gray-300 transition">Produk</a>
+                    <a href="#features" class="text-white hover:text-gray-300 transition">Fitur</a>
+                    <a href="#testimonials" class="text-white hover:text-gray-300 transition">Testimoni</a>
+                    <a href="#order" class="text-white hover:text-gray-300 transition">Pesan</a>
+                </div>
+                <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed top-0 left-0 w-full h-full bg-black z-40 pt-20">
+        <div class="container mx-auto px-4">
+            <a href="#product" onclick="toggleMobileMenu()" class="block py-3 text-white text-lg">Produk</a>
+            <a href="#features" onclick="toggleMobileMenu()" class="block py-3 text-white text-lg">Fitur</a>
+            <a href="#testimonials" onclick="toggleMobileMenu()" class="block py-3 text-white text-lg">Testimoni</a>
+            <a href="#order" onclick="toggleMobileMenu()" class="block py-3 text-white text-lg">Pesan</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center relative">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h1 class="font-cormorant text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up" data-aos="fade-up">
+                Pressed Garlic Chopper
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Alat simpel untuk mencincang rempah segar hanya dengan sekali tekan!
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center" data-aos="fade-up" data-aos-delay="400">
+                <button onclick="scrollToOrder()" class="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-200 transition transform hover:scale-105">
+                    Pesan Sekarang - Rp 225.000
+                </button>
+                <div class="text-sm">
+                    <span class="line-through text-gray-300">Rp 379.000</span>
+                    <span class="text-red-400 ml-2">-40%</span>
+                </div>
+            </div>
+            <div class="mt-8 flex justify-center space-x-8 text-sm" data-aos="fade-up" data-aos-delay="600">
+                <div class="flex items-center">
+                    <i class="fas fa-shipping-fast mr-2"></i>
+                    <span>Pengiriman Cepat</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-shield-alt mr-2"></i>
+                    <span>Garansi 7 Hari</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-clock mr-2"></i>
+                    <span>Stok: 13 pcs</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section id="product" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="font-cormorant text-4xl md:text-5xl font-bold text-center mb-12" data-aos="fade-up">
+                Detail Produk
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <img src="https://cdn.hotishop.com/image/cff6c38fc71cf63a881b0432f5b3548e93b00e8e-600.webp" 
+                         alt="Pressed Garlic Chopper" 
+                         class="w-full rounded-lg shadow-2xl">
+                </div>
+                <div data-aos="fade-left">
+                    <h3 class="font-cormorant text-3xl font-bold mb-4">Pressed Garlic Chopper</h3>
+                    <p class="text-gray-600 mb-6">
+                        Alat revolusioner untuk dapur modern Anda. Dengan satu tekanan sederhana, 
+                        Anda bisa mencincang bawang, cabai, dan rempah lainnya dengan cepat dan merata.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Menghemat waktu hingga 80%</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Hasil potongan rapi & merata</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Material premium & tahan lama</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Mudah dibersihkan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Gallery -->
+            <div class="mt-16">
+                <h3 class="font-cormorant text-2xl font-bold text-center mb-8">Galeri Produk</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                    <img src="https://down-id.img.susercontent.com/file/sg-11134201-7ra3o-mbhraa7bzs6d51@resize_w900_nl.webp" 
+                         alt="Product 1" 
+                         class="gallery-item rounded-lg"
+                         onclick="openLightbox(this.src)">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7ra0l-mbex431lnw54cb.webp" 
+                         alt="Product 2" 
+                         class="gallery-item rounded-lg"
+                         onclick="openLightbox(this.src)">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7ra0g-mbex431ls3ugf2.webp" 
+                         alt="Product 3" 
+                         class="gallery-item rounded-lg"
+                         onclick="openLightbox(this.src)">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7ra0g-mbex431ltiew9a.webp" 
+                         alt="Product 4" 
+                         class="gallery-item rounded-lg"
+                         onclick="openLightbox(this.src)">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7ra0q-mbex431luwzcb8.webp" 
+                         alt="Product 5" 
+                         class="gallery-item rounded-lg"
+                         onclick="openLightbox(this.src)">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7ra0p-mbexraw2b25535.webp" 
+                         alt="Product 6" 
+                         class="gallery-item rounded-lg"
+                         onclick="openLightbox(this.src)">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="font-cormorant text-4xl md:text-5xl font-bold text-center mb-12" data-aos="fade-up">
+                Kenapa Pilih Kami?
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bolt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-cormorant text-2xl font-bold mb-3">Super Cepat</h3>
+                    <p class="text-gray-600">Cincang dalam hitungan detik, hemat waktu 80%</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-cut text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-cormorant text-2xl font-bold mb-3">Hasil Sempurna</h3>
+                    <p class="text-gray-600">Potongan merata & rapi setiap saat</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-cormorant text-2xl font-bold mb-3">Aman Digunakan</h3>
+                    <p class="text-gray-600">Desain ergonomis & aman untuk tangan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="font-cormorant text-4xl md:text-5xl font-bold text-center mb-12" data-aos="fade-up">
+                Testimoni Pelanggan
+            </h2>
+            <div class="relative">
+                <div class="testimonial-carousel" id="testimonial-carousel">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-item">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+                            <div class="flex items-center mb-4">
+                                <img src="https://i.pinimg.com/736x/93/7e/71/937e7195ce1612566a32723e8b792e44.jpg" 
+                                     alt="florryantini" 
+                                     class="w-10 h-10 rounded-full mr-3">
+                                <div>
+                                    <p class="font-semibold">florryantini</p>
+                                    <div class="star-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-3">
+                                Ini sangat membantu pekerjaan dapur, untuk memotong <strong>cabe</strong> dllnya.
+                            </p>
+                            <img src="https://down-id.img.susercontent.com/file/id-11134103-7rbk3-m9azf3e991qp8e.webp" 
+                                 alt="Review 1" 
+                                 class="w-20 h-20 rounded cursor-pointer"
+                                 onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-item">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+                            <div class="flex items-center mb-4">
+                                <img src="https://i.pinimg.com/736x/fe/e2/92/fee2920ebca82411d77982e7064091c0.jpg" 
+                                     alt="vionavalensya" 
+                                     class="w-10 h-10 rounded-full mr-3">
+                                <div>
+                                    <p class="font-semibold">vionavalensya</p>
+                                    <div class="star-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-3">
+                                Barang sudah saya terima dan <strong>pengirimannya cepat</strong>. Terima kasih...
+                            </p>
+                            <img src="https://down-id.img.susercontent.com/file/id-11134103-7rasm-m4mlcohw947ee4.webp" 
+                                 alt="Review 2" 
+                                 class="w-20 h-20 rounded cursor-pointer"
+                                 onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-item">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+                            <div class="flex items-center mb-4">
+                                <img src="https://i.pinimg.com/736x/de/0d/32/de0d328ad9ea85cfff478f7abc942820.jpg" 
+                                     alt="ninupitaloka477" 
+                                     class="w-10 h-10 rounded-full mr-3">
+                                <div>
+                                    <p class="font-semibold">ninupitaloka477</p>
+                                    <div class="star-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-3">
+                                Berfungsi dgn baik <strong>tdk perlu lg pake pisau</strong> iris bawang
+                            </p>
+                            <img src="https://down-id.img.susercontent.com/file/id-11134103-7ra0g-mcg6fu0fmfz42c.webp" 
+                                 alt="Review 3" 
+                                 class="w-20 h-20 rounded cursor-pointer"
+                                 onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <button onclick="prevTestimonial()" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-black text-white p-2 rounded-full">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button onclick="nextTestimonial()" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-black text-white p-2 rounded-full">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <!-- Dots -->
+            <div class="flex justify-center mt-6 space-x-2">
+                <button onclick="goToTestimonial(0)" class="w-3 h-3 bg-black rounded-full"></button>
+                <button onclick="goToTestimonial(1)" class="w-3 h-3 bg-gray-300 rounded-full"></button>
+                <button onclick="goToTestimonial(2)" class="w-3 h-3 bg-gray-300 rounded-full"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing & Countdown -->
+    <section class="py-20 bg-black text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="font-cormorant text-4xl md:text-5xl font-bold mb-8" data-aos="fade-up">
+                Promo Terbatas!
+            </h2>
+            <div class="mb-8" data-aos="fade-up" data-aos-delay="200">
+                <p class="text-3xl md:text-5xl font-bold">
+                    <span class="line-through text-gray-400">Rp 379.000</span>
+                    <span class="text-red-400 ml-4">Rp 225.000</span>
+                </p>
+                <p class="text-gray-300 mt-2">Hemat Rp 154.000</p>
+            </div>
+            
+            <!-- Countdown Timer -->
+            <div class="flex justify-center mb-8" data-aos="fade-up" data-aos-delay="300">
+                <div class="countdown-item">
+                    <span id="hours">23</span>
+                    <p class="text-xs">Jam</p>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes">59</span>
+                    <p class="text-xs">Menit</p>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds">59</span>
+                    <p class="text-xs">Detik</p>
+                </div>
+            </div>
+            
+            <button onclick="scrollToOrder()" class="bg-white text-black px-12 py-4 rounded-full font-bold text-lg hover:bg-gray-200 transition transform hover:scale-105">
+                Pesan Sekarang
+            </button>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section id="order" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="font-cormorant text-4xl md:text-5xl font-bold text-center mb-12" data-aos="fade-up">
+                Pesan Sekarang
+            </h2>
+            <div class="max-w-2xl mx-auto">
+                <div class="order-form-wrapper p-8" data-aos="fade-up">
+                    <h3 class="font-cormorant text-2xl font-bold mb-6 text-center">
+                        Isi Formulir Pemesanan
+                    </h3>
+                    
+                    <!-- OrderOnline Embed Code -->
+                    <div class="ooef">
+                        <form class="orderonline-embed-form" data-username="vera" data-product-slug="pressed-garlic-chopper" data-product-id="68b2e0fe9c46728dff06aba9" id="oo-embed-form-pressed-garlic-chopper-4866" data-origin="orderonline">
+                            <div class="ooef-loader">
+                                <style>
+                                    .ooef-loader {
+                                        visibility: hidden;
+                                        opacity: 0;
+                                        position: absolute;
+                                        left: 0;
+                                        right: 0;
+                                        top: 0;
+                                        bottom: 0;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        flex-direction: column;
+                                        animation: ooLoadingIn 10s ease;
+                                        -webkit-animation: ooLoadingIn 10s ease;
+                                        animation-fill-mode: forwards;
+                                        overflow: hidden;
+                                    }
+                                    @keyframes ooLoadingIn {
+                                        0% { visibility: hidden; opacity: 0 }
+                                        20% { visibility: visible; opacity: 0 }
+                                        100% { visibility: visible; opacity: 1 }
+                                    }
+                                    @-webkit-keyframes ooLoadingIn {
+                                        0% { visibility: hidden; opacity: 0 }
+                                        20% { visibility: visible; opacity: 0 }
+                                        100% { visibility: visible; opacity: 1 }
+                                    }
+                                    .ooef-loader > div, .ooef-loader > div:after {
+                                        border-radius: 50%;
+                                        width: 2.5rem;
+                                        height: 2.5rem;
+                                    }
+                                    .ooef-loader > div {
+                                        font-size: 10px;
+                                        position: relative;
+                                        text-indent: -9999em;
+                                        border: 0.25rem solid #f5f5f5;
+                                        border-left: 0.25rem solid #55c4cf;
+                                        -webkit-transform: translateZ(0);
+                                        -ms-transform: translateZ(0);
+                                        transform: translateZ(0);
+                                        -webkit-animation: ooLoading 1.1s infinite linear;
+                                        animation: ooLoading 1.1s infinite linear;
+                                    }
+                                    .ooef-loader.error > div {
+                                        border-left: 0.25rem solid #ff4500;
+                                        animation-duration: 5s;
+                                    }
+                                    @-webkit-keyframes ooLoading {
+                                        0% { -webkit-transform: rotate(0); transform: rotate(0) }
+                                        100% { -webkit-transform: rotate(360deg); transform: rotate(360deg) }
+                                    }
+                                    @keyframes ooLoading {
+                                        0% { -webkit-transform: rotate(0); transform: rotate(0) }
+                                        100% { -webkit-transform: rotate(360deg); transform: rotate(360deg) }
+                                    }
+                                </style>
+                                <div aria-live="polite" role="status">
+                                    <div>Loading...</div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <script>
+                        if (typeof xLogError != 'function') {
+                            var xLogError = function (error) {
+                                var req = new XMLHttpRequest();
+                                var payload = JSON.stringify({ url: document.location.href, line: error.line, stack: error.stack });
+                                var params = 'message=' + encodeURIComponent(error.name) + '&payload=' + encodeURIComponent(payload) + '&type=embed&level=error';
+                                req.open('POST', 'https://api.orderonline.id/log', true);
+                                req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                                req.send(params);
+                            };
+                        }
+                        try {
+                            if (typeof xEmbedScript != 'function') {
+                                var xEmbedScript = function () {
+                                    !function(w, d, e, v, id, t, s) {
+                                        if (d.getElementById(id)) return;
+                                        t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                                        s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+                                    }(window, document, 'script', 'https://cdn.orderonline.id/js/embed-v2-slim.min.js?v=8.0.4', 'oo-embed-js');
+                                };
+                            }
+                            if (typeof xEmbedInit != 'function') {
+                                var xEmbedInit = function (w, n) {
+                                    if (w.ooe) return;
+                                    n = w.ooe = function() { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) };
+                                    if (!w._ooe) w._ooe = n; n.push = n;n.loaded = !0;n.version = '8.0.4';n.queue = [];
+                                };
+                            }
+                            xEmbedInit(window);
+                            ooe('setup', 'redirect', 'https://vera.orderonline.id');
+                            ooe('init', '5f1a7807a9bf807d6c63d963', '68b2e0fe9c46728dff06aba9', '68b2e0fe9c46728dff06abaa', 'oo-embed-form-pressed-garlic-chopper-4866', {"mode":"page","action":"Klik untuk pemesanan","title":"Form Pemesanan","triggerPixel":true,"triggerGtm":true});
+                            if (!window.jQuery) {
+                                !function(w, d, e, v, id, t, s) {
+                                    if (d.getElementById(id)) return;
+                                    t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                                    t.addEventListener('load', xEmbedScript);
+                                    s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+                                }(window, document, 'script', 'https://cdn.orderonline.id/js/vendor/jquery.min.js', 'oo-embed-jquery');
+                            } else {
+                                xEmbedScript();
+                            }
+                        } catch (e) {
+                            xLogError(e); throw e;
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+        <img id="lightbox-image" src="" alt="Lightbox" class="max-w-full max-h-full">
+        <button onclick="closeLightbox(event)" class="absolute top-4 right-4 text-white text-2xl">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Social Proof Popup -->
+    <div class="social-proof" id="social-proof">
+        <div class="bg-white rounded-lg shadow-lg p-4 flex items-center max-w-sm">
+            <img src="https://cdn.hotishop.com/image/cff6c38fc71cf63a881b0432f5b3548e93b00e8e-600.webp" 
+                 alt="Customer" 
+                 class="w-10 h-10 rounded-full mr-3">
+            <div>
+                <p class="text-sm font-medium" id="social-proof-text"></p>
+                <p class="text-xs text-gray-500" id="social-proof-time"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky CTA -->
+    <div class="sticky-cta" id="sticky-cta">
+        <button onclick="scrollToOrder()" class="bg-black text-white px-6 py-3 rounded-full shadow-lg flex items-center">
+            <i class="fas fa-shopping-cart mr-2"></i>
+            Pesan Sekarang
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out'
+        });
+
+        // Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('active');
+        }
+
+        // Scroll to Order
+        function scrollToOrder() {
+            document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Countdown Timer
+        function updateCountdown() {
+            const hours = document.getElementById('hours');
+            const minutes = document.getElementById('minutes');
+            const seconds = document.getElementById('seconds');
+            
+            let h = parseInt(hours.textContent);
+            let m = parseInt(minutes.textContent);
+            let s = parseInt(seconds.textContent);
+            
+            s--;
+            if (s < 0) {
+                s = 59;
+                m--;
+                if (m < 0) {
+                    m = 59;
+                    h--;
+                    if (h < 0) {
+                        h = 23;
+                    }
+                }
+            }
+            
+            hours.textContent = h.toString().padStart(2, '0');
+            minutes.textContent = m.toString().padStart(2, '0');
+            seconds.textContent = s.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+
+        // Lightbox
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const image = document.getElementById('lightbox-image');
+            image.src = src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(event) {
+            if (event.target.id === 'lightbox' || event.target.classList.contains('fa-times')) {
+                const lightbox = document.getElementById('lightbox');
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Testimonial Carousel
+        let currentTestimonial = 0;
+        const carousel = document.getElementById('testimonial-carousel');
+        
+        function updateCarousel() {
+            const offset = -currentTestimonial * 100;
+            carousel.style.transform = `translateX(${offset}%)`;
+            
+            // Update dots
+            const dots = document.querySelectorAll('.testimonial-item');
+            dots.forEach((dot, index) => {
+                if (index === currentTestimonial) {
+                    dot.classList.add('bg-black');
+                    dot.classList.remove('bg-gray-300');
+                } else {
+                    dot.classList.add('bg-gray-300');
+                    dot.classList.remove('bg-black');
+                }
+            });
+        }
+        
+        function nextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % 3;
+            updateCarousel();
+        }
+        
+        function prevTestimonial() {
+            currentTestimonial = (currentTestimonial - 1 + 3) % 3;
+            updateCarousel();
+        }
+        
+        function goToTestimonial(index) {
+            currentTestimonial = index;
+            updateCarousel();
+        }
+        
+        // Auto scroll testimonials
+        setInterval(nextTestimonial, 5000);
+
+        // Social Proof
+        const names = ['Vina', 'Dina', 'Kartika', 'Lestari', 'Putri', 'Maya Sari', 'Rani', 'Permata', 'Lestari F'];
+        const cities = ['Jakarta', 'Surabaya', 'Bandung', 'Medan', 'Bekasi', 'Tangerang', 'Depok', 'Semarang'];
+        
+        function showSocialProof() {
+            const popup = document.getElementById('social-proof');
+            const text = document.getElementById('social-proof-text');
+            const time = document.getElementById('social-proof-time');
+            
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            const randomCity = cities[Math.floor(Math.random() * cities.length)];
+            const randomMinutes = Math.floor(Math.random() * 15) + 1;
+            
+            text.textContent = `${randomName} dari ${randomCity} baru saja memesan Pressed Garlic Chopper`;
+            time.textContent = `${randomMinutes} menit yang lalu`;
+            
+            popup.classList.add('show');
+            
+            setTimeout(() => {
+                popup.classList.remove('show');
+            }, 5000);
+        }
+        
+        // Show social proof every 8 seconds
+        setTimeout(() => {
+            showSocialProof();
+            setInterval(showSocialProof, 8000);
+        }, 3000);
+
+        // Sticky CTA
+        window.addEventListener('scroll', () => {
+            const stickyCta = document.getElementById('sticky-cta');
+            if (window.scrollY > 500) {
+                stickyCta.classList.add('show');
+            } else {
+                stickyCta.classList.remove('show');
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
